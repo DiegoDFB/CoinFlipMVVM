@@ -13,11 +13,12 @@
             </HorizontalStackLayout>
             <Image
             x:Name="MoedaImage"
-            Source="cara.png"
+            Source="{Binding NomeImagem}"
             HeightRequest="75"/>
             <Picker
             x:Name="LadoPicker"
-            Title="Selecione um lado da moeda">
+            Title="Selecione um lado da moeda"
+            SelectedItem="{Binding LadoSelecionado}">
                 <Picker.Items>
                     <x:String>cara</x:String>
                     <x:String>coroa</x:String>
@@ -25,14 +26,15 @@
             </Picker>
 
             <Label
-            x:Name="ResultadoLabel">
+            x:Name="ResultadoLabel"
+            Text="{Binding Resultado}">
 
             </Label>
 
             <Button
             x:Name="CoinFlipButton"
             Text="Girar a moeda"
-            Clicked="CoinFlipButton_Clicked"/>
+            Command="{Binding JogarCommand}"/>
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>
